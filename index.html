@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Космический защитник PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+    <div class="menu" id="menu">
+        <h1>Космический защитник PRO</h1>
+        <button id="startButton">Начать игру</button>
+        <button id="controlsButton">Управление</button>
+        <button id="highscoresButton">Рекорды</button>
+    </div>
+    <div class="menu" id="highscoresMenu" style="display: none;">
+        <h1>Рекорды</h1>
+        <div id="highscoresList" style="max-height: 300px; overflow-y: auto; margin: 20px;"></div>
+        <button class="back-menu" onclick="backToMenu()">Назад</button>
+    </div>
+    <div class="controls-info" id="controlsInfo" style="display: none;">
+        <h2>Управление</h2>
+        <p>← → для движения</p>
+        <p>Пробел для стрельбы</p>
+        <p>Собирайте бонусы:</p>
+        <p><span style="color: #2ecc71;">Зелёный</span> - здоровье</p>
+        <p><span style="color: #3498db;">Синий</span> - щит</p>
+        <p><span style="color: #f1c40f;">Жёлтый</span> - оружие</p>
+        <button id="backButton">Назад</button>
+    </div>
+
+    <div id="gameContainer" style="display: none;">
+        <button id="pauseButton">Меню</button>
+        <h1>🌟 Космический защитник PRO</h1>
+        <div class="status">Счёт: <span id="score" style="color: #f1c40f;">0</span></div>
+        <div class="status">Здоровье: <span id="health" style="color: #2ecc71;">100</span></div>
+        <div class="status">Щит: <span id="shield" style="color: #3498db;">0</span></div>
+        <div class="bonus-info">
+            <div class="bonus-icon" style="background-color: #2ecc71;" title="Бонус здоровья"></div>
+            <div class="bonus-icon" style="background-color: #3498db;" title="Бонус щита"></div>
+            <div class="bonus-icon" style="background-color: #f1c40f;" title="Бонус оружия"></div>
+        </div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="mobileControls">
+            <div class="mobile-btn" id="leftBtn">←</div>
+            <div class="mobile-btn" id="rightBtn">→</div>
+            <div class="mobile-btn" id="shootBtn">Огонь</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+
+        canvas {
+            border: 2px solid #2c3e50;
+            background: #000;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #2c3e50;
+            color: #ecf0f1;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #3498db;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        .status {
+            margin: 10px;
+            font-size: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .bonus-info {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .bonus-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .menu button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu button:hover {
+            background: #2980b9;
+        }
+				#highscoresList {
+			background: rgba(0,0,0,0.5);
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		.highscore-item {
+			background: rgba(255,255,255,0.1);
+			padding: 8px;
+			margin: 5px 0;
+			border-radius: 3px;
+		}
+
+		.back-menu {
+			margin-top: 20px;
+		}
+
+
+			}
+			
+			.mobile-btn {
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				background: rgba(255,255,255,0.2);
+				border-radius: 50%;
+				z-index: 10;
+			}
+			
+			#moveJoystick {
+				bottom: 20px;
+				left: 20px;
+			}
+			
+			#shootButton {
+				bottom: 20px;
+				right: 20px;
+				background: rgba(255,0,0,0.2) !important;
+			}
+		}
+		/* В конец файла добавьте: */
+#mobileControls {
+    display: none; /* По умолчанию скрыто */
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.mobile-btn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+#leftBtn {
+    left: 20px;
+    bottom: 20px;
+}
+
+#rightBtn {
+    left: 120px;
+    bottom: 20px;
+}
+
+#shootBtn {
+    right: 20px;
+    bottom: 20px;
+    background: rgba(255, 0, 0, 0.3);
+}
+
+
+    
+    /* Уменьшим размер текста статуса */
+    .status {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 60vh;
+    }
+    
+    .status {
+        font-size: 14px !important;
+        padding: 5px !important;
+        margin: 5px !important;
+    }
+    
+    h1 {
+        font-size: 24px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    #mobileControls {
+        display: flex !important;
+        justify-content: space-between;
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        z-index: 100;
+    }
+    
+    .mobile-btn {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 20px !important;
+    }
+    
+    #pauseButton {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+/* Десктопные стили */
+@media (min-width: 769px) {
+    #mobileControls {
+        display: none !important;
+    }
+}
+#gameCanvas {
+    touch-action: none; /* Отключаем стандартные жесты */
+}
+
+.mobile-btn {
+    touch-action: manipulation; /* Оптимизация для касаний */
+    user-select: none; /* Запрет выделения текста */
+}
